@@ -59,7 +59,10 @@ define(function () {
                   if (pElementChildNode.nodeName === 'SPAN') {
                     // Unwrap any SPAN that has been inserted
                     var spanElement = pElementChildNode;
-                    new scribe.api.Element(containerPElement).unwrap(spanElement);
+                    console.log(spanElement.getAttribute('class'))
+                    if (! spanElement.getAttribute('class') ) {
+                      new scribe.api.Element(containerPElement).unwrap(spanElement);
+                    }
                   } else if (pElementChildNode.nodeType === Node.ELEMENT_NODE) {
                     /**
                      * If the paragraph contains inline elements such as
